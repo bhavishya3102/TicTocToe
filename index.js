@@ -59,6 +59,7 @@ function swapturn(){
 function checkwin(){
 
     let answer="";
+    let flag=0;
     winningpos.forEach((position)=>{
         // check  for winning condition
         if((gamegrid[position[0]]!="" &&gamegrid[position[0]]!="" &&gamegrid[position[0]]!="" ) && (gamegrid[position[0]]===gamegrid[position[1]]&& gamegrid[position[1]]===gamegrid[position[2]])){
@@ -85,6 +86,7 @@ function checkwin(){
 
         playtab.classList.add("active");
         playtab.textContent="New Game";
+        flag=1;
         }
 
 
@@ -94,7 +96,7 @@ function checkwin(){
 
     let count=0;
     gamegrid.forEach((game)=>{
-        if(game!="")
+        if(game!="" && flag===0)
         count++;
 
     });
